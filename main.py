@@ -392,11 +392,12 @@ def parse_pdf(pdf_path):
             all_runs.extend(build_run_rows(bh))
     return all_runs
 
+
 # ─────────────────────────────────────────────────────────────────────────────
 # 10. CLI
 # ─────────────────────────────────────────────────────────────────────────────
 
-def main():
+if __name__ == '__main__':
     import argparse
     ap = argparse.ArgumentParser(description='Parse borehole log PDF -> CSV')
     ap.add_argument('pdf')
@@ -408,9 +409,11 @@ def main():
 
     run_rows = parse_pdf(args.pdf)
 
-    run_path = out_dir / 'drilling_runs.csv'
-    run_path.write_text(write_csv(run_rows, RUN_COLS), encoding='utf-8')
-    print(f'Runs      : {len(run_rows)} rows -> {run_path}')
+    run_path = out_dir / 'drilling_runs1.csv'
 
-if __name__ == '__main__':
-    main()
+    run_path.write_text(write_csv(run_rows, RUN_COLS), encoding='utf-8')
+
+    print('Runs      : {} rows -> {}'.format(len(run_rows), run_path))
+    print()
+    print('=== RUNS ===')
+    print(write_csv(run_rows, RUN_COLS))

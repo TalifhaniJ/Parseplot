@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "parseplot"
-version = "0.2.0"
+version = "0.2.1"
 authors = [{ name="Khomola Talifhani", email="work.talifhani@gmail.com" }]
 description = "Tools for parsing geotechnical test-pit and borehole PDFs."
 readme = "README.md"
