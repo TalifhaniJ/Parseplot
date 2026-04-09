@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "parseplot"
+version = "0.2.0"
+authors = [{ name="Your Name", email="your@email.com" }]
+description = "Tools for parsing geotechnical test-pit and borehole PDFs."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pdfplumber>=0.10.0",
+]
+
+[project.scripts]
+# Users can now run these two distinct commands
+parse-testpit = "geoparse.testpit:main"
+parse-plot = "geoparse.borehole:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/geoparse"]
