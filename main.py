@@ -1,6 +1,6 @@
 """
 parse_borehole.py — Pure Python parser for geotechnical borehole log PDFs
-                    (dotPLOT / Mukona format, one borehole per page).
+                    (dotPLOT, one borehole per page).
 
 Outputs two CSVs:
   1. borehole_intervals.csv  — lithology intervals, PART1-compatible schema
